@@ -12,6 +12,7 @@ export class ConverterComponent implements OnInit {
 
 
   message: String | undefined;
+
   form: {
     from: String;
     to: String;
@@ -27,8 +28,7 @@ export class ConverterComponent implements OnInit {
       to: 'USD',
       value: 1
     }
-
-    }
+  }
 
   ngOnInit(): void {
     this.message = "";
@@ -36,7 +36,6 @@ export class ConverterComponent implements OnInit {
 
   convert() {
 
-    console.log(this.form);
     const fromRate = this.rates.find(rate => rate.code === this.form.from);
     const toRate = this.rates.find(rate => rate.code === this.form.to);
 
@@ -44,24 +43,21 @@ export class ConverterComponent implements OnInit {
     let fromValue:number = 0;
     const value: number = Number.parseFloat(this.form.value.toString());
 
+    if(value > 9999999999999){
+      this.message = "Value too high";
+    }else{
 
-    if (fromRate?.value) {
-    fromValue = fromRate?.value;
+      if (fromRate?.value) {
+      fromValue = fromRate?.value;
 
+      if(toRate?.value)
+        toValue = toRate.value;
 
+      const result:number = value * toValue /fromValue;
 
-
-    if(toRate?.value)
-      toValue = toRate.value;
-
-
-
-    const result:number = value * toValue /fromValue;
-
-    console.log(result)
-
-    if (value && toValue && toRate?.code && fromRate?.code) {
-      this.message = `${new Intl.NumberFormat('de-DE', { style: 'currency', currency: fromRate.code }).format(value)}  = ${new Intl.NumberFormat('de-DE', { style: 'currency', currency: toRate.code }).format(result)}`;
+      if (value && toValue && toRate?.code && fromRate?.code) {
+        this.message = `${new Intl.NumberFormat('de-DE', { style: 'currency', currency: fromRate.code }).format(value)}  = ${new Intl.NumberFormat('de-DE', { style: 'currency', currency: toRate.code }).format(result)}`;
+      }
     }
   }}
 
