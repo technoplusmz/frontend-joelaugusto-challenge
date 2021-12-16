@@ -8,7 +8,6 @@ import { ApiService } from './shared/service/api.service';
 })
 export class AppComponent {
 
-
   data:any;
   rates: {code: string, value: number}[];
 
