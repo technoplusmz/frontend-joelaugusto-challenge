@@ -10,7 +10,7 @@ Este projecto foi desenvolvido em Angular 13.
 ## Como executar
 
 
-Instalar o CLI do Angular e executar o seguinte comando `ng serve`, a aplicacao sera iniciada automaticamente na seguinte `http://localhost:4200/`
+Instalar o CLI do Angular e executar o seguinte comando `ng serve`, a aplicacao sera iniciada automaticamente no seguinte endereco `http://localhost:4200/`
 
 
 
