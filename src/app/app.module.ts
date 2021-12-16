@@ -9,12 +9,14 @@ import { InfoComponent } from './components/info/info.component';
 import { TableComponent } from './components/table/table.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { ConverterComponent } from './converter/converter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InfoComponent,
-    TableComponent
+    TableComponent,
+    ConverterComponent
   ],
   imports: [
     BrowserModule,

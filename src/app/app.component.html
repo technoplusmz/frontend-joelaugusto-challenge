@@ -3,32 +3,7 @@
 
   <!-- <app-info [next]="data.time_next_update_utc"></app-info> -->
 
-  <div class="container">
-
-    <div class="form">
-      <div class="text-inputs">
-        <div>
-          <label>Value</label>
-          <input type="number" class="input" min="1" [(ngModel)]="form.value" (input)="convert()"/>
-        </div>
-        <div>
-          <label>From</label>
-          <select class="input" [(ngModel)]="form.from" (change)="convert()">
-            <option *ngFor="let rate of rates">{{rate.code}}</option>
-          </select>
-        </div>
-        <div>
-          <label>To</label>
-          <select class="input" [(ngModel)]="form.to" (change)="convert()">
-            <option *ngFor="let rate of rates" >{{rate.code}}</option>
-          </select>
-        </div>
-      </div>
-      <p class="msg">{{message}}</p>
-      <input type="submit" class="input btn" value="Convert" (click)="convert()"/>
-      <small class="update">Last Update : {{data.time_last_update_utc.replace("+0000", "")}}</small>
-    </div>
-  </div>
+  <app-converter [rates]="rates" [data]="data"></app-converter>
   <button (click)="showTable()" class="input btn" style="align-self: center;">{{showT ? "Hide": "Show"}} Table</button>
   <app-table *ngIf="showT" [data]="rates"></app-table>
 </div>

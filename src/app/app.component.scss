@@ -7,28 +7,6 @@
   flex-direction: column;
 }
 
-.form{
-  display: flex;
-  flex-direction: column;
-  flex-grow: 1;
-
-  small{
-    align-self: flex-end;
-    margin-top: 10px;
-    color: #5c667b;
-  }
-}
-
-.container{
-  width: 60vw;
-  margin: 0 auto;
-  border: 1px solid #ccc;
-  padding: 30px;
-  display: flex;
-  border-radius: 10px;
-
-}
-
 .input{
   height: 40px;
   border-radius: 7px;
@@ -36,17 +14,6 @@
   padding: 0 5px;
   border: 1px solid #ccc;
   margin-top: 10px;
-}
-
-
-.text-inputs{
-  width: 100%;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-}
-.text-inputs div {
-  display: grid;
 }
 
 .btn{
@@ -57,11 +24,3 @@
   margin-top: 20px;
 
 }
-
-.msg{
-  font-size: large;
-  margin-top: 50px;
-  font-size: 25pt;
-}
-
-
