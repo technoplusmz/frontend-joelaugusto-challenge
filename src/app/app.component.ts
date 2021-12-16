@@ -10,7 +10,7 @@ export class AppComponent {
 
 
   data:any;
-  rates: {code: String, value: Number}[];
+  rates: {code: string, value: number}[];
   message: String | undefined;
 
   form: {
@@ -41,16 +41,22 @@ export class AppComponent {
     const fromRate = this.rates.find(rate => rate.code === this.form.from);
     const toRate = this.rates.find(rate => rate.code === this.form.to);
 
-    const value: any = this.form.value;
-    const fromValue:any = fromRate?.value;
-    const toValue:any = toRate?.value;
+    let toValue:number =  0;
+    let fromValue:number = 0;
+    const value: number = Number.parseFloat(this.form.value.toString());
 
-    const result = value * toValue /fromValue;
+    if (fromRate?.value) {
+    fromValue = fromRate?.value;
 
-    if (value && toValue) {
-      this.message = `${this.form.value} ${this.form.from} = ${result.toFixed(3)} ${this.form.to}`;
+    if(toRate?.value)
+      toValue = toRate.value;
+
+    const result:number = value * toValue /fromValue;
+
+    if (value && toValue && toRate?.code && fromRate?.code) {
+      this.message = `${new Intl.NumberFormat('de-DE', { style: 'currency', currency: fromRate.code }).format(value)}  = ${new Intl.NumberFormat('de-DE', { style: 'currency', currency: toRate.code }).format(result)}`;
     }
-  }
+  }}
 
   showTable() {
     this.showT = !this.showT;
