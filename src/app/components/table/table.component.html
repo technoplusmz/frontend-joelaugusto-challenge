@@ -1,0 +1,13 @@
+<div class="container">
+  <input type="text" placeholder="search" [(ngModel)]="inputValue" (input)="search()"/>
+  <table>
+    <tr>
+      <th>Code</th>
+      <th>Value</th>
+    </tr>
+    <tr *ngFor="let rate of rates">
+      <td>{{rate.code}}</td>
+      <td>{{rate.value}}</td>
+    </tr>
+  </table>
+</div>

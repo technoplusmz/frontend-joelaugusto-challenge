@@ -1,0 +1,30 @@
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 60vw;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.container{
+  margin-top: 50px;
+
+  input{
+    height: 40px;
+    border-radius: 7px;
+    background: white;
+    padding: 0 5px;
+    border: 1px solid #ccc;
+    margin-top: 10px;
+    justify-self: center;
+    margin-bottom: 20px;
+  }
+}
